@@ -14,7 +14,7 @@ const ShoppingBag: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-8  text-black p-8  min-h-screen">
       {/* Shopping Bag Section */}
-      <div className="flex-1 bg-white shadow-md rounded-lg p-6">
+      <div className="flex-1   rounded-lg p-6">
         <h1 className="text-3xl font-bold mb-6 border-b pb-4">Shopping Bag</h1>
         {items.map((item) => (
           <div
@@ -40,7 +40,8 @@ const ShoppingBag: React.FC = () => {
       </div>
 
       {/* Summary Section */}
-      <div className="w-full lg:w-1/3 bg-white shadow-md rounded-lg p-6">
+      <hr className="my-8 bg-black" />
+      <div className="w-full lg:w-1/3  rounded-lg p-6">
         <h2 className="text-2xl font-semibold mb-6 border-b pb-4">Summary</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600">Coupon Code</label>

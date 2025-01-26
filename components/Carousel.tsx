@@ -7,10 +7,10 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, image: '/images/women.' },
-  { id: 2, image: '/images/product2.jpg' },
-  { id: 3, image: '/images/product3.jpg' },
-  { id: 4, image: '/images/product4.jpg' },
+  { id: 1, image: '/images/p6.jpeg' },
+  { id: 2, image: '/images/p6.jpeg' },
+  { id: 3, image: '/images/p6.jpeg' },
+  { id: 4, image: '/images/p6.jpeg' },
 ];
 
 const ProductCarousel = () => {

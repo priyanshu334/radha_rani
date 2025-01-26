@@ -22,11 +22,15 @@ export default function Home() {
       {/* Navbar */}
     
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center my-20 space-y-5 text-center px-4">
-        <h1 className="font-extrabold text-4xl">
-          Where style speaks, trend resonates, and fashion flourishes
+      <section className="flex flex-col justify-center items-center my-20 space-y-5 text-center text-white px-4">
+        <h1 className="font-extrabold text-[48px]">
+          Where style speaks, trend resonates and
+          <div className="-mt-2">
+        fashion flourishes
+          </div>
+      
         </h1>
-        <div className="mt-3">
+        <div className="mt-2">
           <h2 className="font-medium text-lg">
             Unveiling a fashion tradition where every emotion meets.
           </h2>

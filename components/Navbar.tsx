@@ -11,10 +11,10 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#C8AD84] text-white mb-32">
-      <div className="container mx-auto flex items-center justify-between py-4 px-1">
+      <div className="min-w-full flex items-center justify-between py-4 px-8">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center -ml-2">
             <Image
               src="/images/logo.png"
               alt="Logo"
@@ -38,30 +38,30 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div
-          className={`absolute top-16 left-0 w-full bg-white text-black rounded-full p-4 font-bold md:static md:flex md:ml-14 md:items-center md:space-x-6 md:w-auto ${
+          className={`absolute top-16 left-0 w-full bg-white text-black rounded-full  font-bold md:static md:flex md:ml-32 md:items-center md:space-x-6 md:w-auto ${
             menuOpen ? "block" : "hidden"
           }`}
         >
           <Link
-            className="block px-4 py-2 rounded-lg hover:bg-[#9C7A4D] hover:text-white transition-all duration-200"
+            className="block px-10 py-4   bg-[#9C7A4D] rounded-full text-white  transition-all duration-200"
             href="/"
           >
             Home
           </Link>
           <Link
-            className="block px-4 py-2 rounded-lg hover:bg-[#9C7A4D] hover:text-white transition-all duration-200"
+            className="block px-10 py-4 rounded-lg  transition-all duration-200"
             href="/shop"
           >
             Shop
           </Link>
           <Link
-            className="block px-4 py-2 rounded-lg hover:bg-[#9C7A4D] hover:text-white transition-all duration-200"
+            className="block px-10 py-4 rounded-lg  transition-all duration-200"
             href="/offer"
           >
             Offer
           </Link>
           <Link
-            className="block px-4 py-2 rounded-lg hover:bg-[#9C7A4D] hover:text-white transition-all duration-200"
+            className="block px-10 py-4 rounded-lg  transition-all duration-200"
             href="/blog"
           >
             Blog
@@ -69,7 +69,7 @@ const Navbar = () => {
         </div>
 
         {/* Shopping Cart and User Profile */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-8">
           <button className="relative">
             <FaHeart className="text-3xl text-black" />
           </button>

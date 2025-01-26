@@ -36,32 +36,32 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-3">Navigation</h3>
             <ul>
               <li>
-                <Link href="/about" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/about" className="hover:text-[black] text-sm">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/shop" className="hover:text-[black] text-sm">
                   Shop (categories)
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/about" className="hover:text-[black] text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/blog" className="hover:text-[black] text-sm">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/contact" className="hover:text-[black] text-sm">
                   Returns and Exchanges
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-[#9C7A4D] text-sm">
+                <Link href="/shop" className="hover:text-[black] text-sm">
                   Shipping Information
                 </Link>
               </li>
@@ -81,13 +81,13 @@ const Footer = () => {
           <div className="flex flex-col">
             <h3 className="text-xl font-semibold mb-3">Follow Us</h3>
             <div className="flex space-x-4">
-              <Link href="https://facebook.com" target="_blank" className="text-xl hover:text-[#9C7A4D]">
+              <Link href="https://facebook.com" target="_blank" className="text-xl hover:text-[black]">
                 <FaFacebook />
               </Link>
-              <Link href="https://twitter.com" target="_blank" className="text-xl hover:text-[#9C7A4D]">
+              <Link href="https://twitter.com" target="_blank" className="text-xl hover:text-[black]">
                 <FaTwitter />
               </Link>
-              <Link href="https://instagram.com" target="_blank" className="text-xl hover:text-[#9C7A4D]">
+              <Link href="https://instagram.com" target="_blank" className="text-xl hover:text-[black]">
                 <FaInstagram />
               </Link>
             </div>

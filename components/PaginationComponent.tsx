@@ -13,12 +13,11 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const renderPageNumbers = () => {
     const pageNumbers: any = [];
+    const maxVisiblePages = 10; // Show 10 pages initially
+
     for (let i = 1; i <= totalPages; i++) {
-      if (
-        i === 1 ||
-        i === totalPages ||
-        (i >= currentPage - 1 && i <= currentPage + 1)
-      ) {
+      if (i <= maxVisiblePages || i === totalPages) {
+        // Always show pages 1-10 and the last page
         pageNumbers.push(
           <button
             key={i}
@@ -32,20 +31,20 @@ const Pagination: React.FC<PaginationProps> = ({
             {i}
           </button>
         );
-      } else if (
-        (i === currentPage - 2 || i === currentPage + 2) &&
-        !pageNumbers.includes("...")
-      ) {
+      } else if (i === maxVisiblePages + 1 && totalPages > maxVisiblePages + 1) {
+        // Add ellipsis after 10 pages
         pageNumbers.push(
           <span
-            key={`ellipsis-${i}`}
-            className="w-10 h-10 mx-1 flex items-center justify-center text-gray-500"
+            key="ellipsis"
+            className="w-10 h-10 tracking-wider font-bold flex items-center justify-center  text-white"
           >
-            ...
+            
+            .  .  .
           </span>
         );
       }
     }
+
     return pageNumbers;
   };
 

@@ -17,6 +17,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <OfferSection/>
        
       <Footer/>
+      <div className='bg-[#C8AD84] flex ml-28 p-[2px] mt-3'>
+        <h1>Copyright © 2024 All rights resesrved</h1>
+
+      </div>
     </div>
   );
 };
