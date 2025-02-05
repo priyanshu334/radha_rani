@@ -41,7 +41,7 @@ const ShoppingBag: React.FC = () => {
 
       {/* Summary Section */}
       <hr className="my-8 bg-black" />
-      <div className="w-full lg:w-1/3  rounded-lg p-6">
+      <div className="w-full lg:w-1/3   p-6 border-l-[1px] border-black">
         <h2 className="text-2xl font-semibold mb-6 border-b pb-4">Summary</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600">Coupon Code</label>

@@ -12,19 +12,19 @@ const Footer = () => {
           {/* Column 1: Logo and Description */}
           <div className="flex flex-col space-y-3">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center  space-x-3">
               <Image
                 src="/images/logo.png" // Add the path to your logo image in the public folder
                 alt="Logo"
-                width={80} // Set the width of the logo
-                height={50} // Set the height of the logo
-                className="object-contain"
+                width={100} // Set the width of the logo
+                height={70} // Set the height of the logo
+                className="object-contain mb-8"
               />
               <h2 className="text-4xl font-bold mb-2">Radha Rani</h2>
             </div>
             
             {/* Address and Contact Information */}
-            <div>
+            <div className='flex flex-col space-y-3'>
               <p>Address: shop address near palm mall Korba, Chhattisgarh, PIN India</p>
               <p>Email: radharani@gmail.com</p>
               <p>Phone: +91 9977121212</p>
@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col">
+          <div className="flex flex-col my-5">
             <h3 className="text-xl font-semibold mb-3">Navigation</h3>
             <ul>
               <li>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Legal Information */}
-          <div className="flex flex-col">
+          <div className="flex flex-col my-5">
             <h3 className="text-xl font-semibold mb-3">Legal Information</h3>
             <ul>
               <li className="text-sm">Terms and Conditions</li>
@@ -78,17 +78,20 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Social Media Links */}
-          <div className="flex flex-col">
+          <div className="flex  flex-col my-5">
             <h3 className="text-xl font-semibold mb-3">Follow Us</h3>
-            <div className="flex space-x-4">
-              <Link href="https://facebook.com" target="_blank" className="text-xl hover:text-[black]">
+            <div className="flex flex-col ">
+              <Link href="https://facebook.com" target="_blank" className="text-xl hover:text-[black]  flex space-x-2">
                 <FaFacebook />
+                <h1>Facebook</h1>
               </Link>
-              <Link href="https://twitter.com" target="_blank" className="text-xl hover:text-[black]">
+              <Link href="https://twitter.com" target="_blank" className="text-xl hover:text-[black] flex space-x-2">
                 <FaTwitter />
+                <h1>Twitter</h1>
               </Link>
-              <Link href="https://instagram.com" target="_blank" className="text-xl hover:text-[black]">
+              <Link href="https://instagram.com" target="_blank" className="text-xl hover:text-[black] flex space-x-2">
                 <FaInstagram />
+                <h1>Instagram</h1>
               </Link>
             </div>
           </div>

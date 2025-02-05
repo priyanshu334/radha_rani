@@ -38,30 +38,30 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div
-          className={`absolute top-16 left-0 w-full bg-white text-black rounded-full  font-bold md:static md:flex md:ml-32 md:items-center md:space-x-6 md:w-auto ${
+          className={`absolute top-16 left-0 w-full bg-white text-black rounded-full  font-bold md:static md:flex md:ml-16 md:items-center md:space-x-6 md:w-auto ${
             menuOpen ? "block" : "hidden"
           }`}
         >
           <Link
-            className="block px-10 py-4   bg-[#9C7A4D] rounded-full text-white  transition-all duration-200"
+            className="block px-10 py-4   bg-[#9C7A4D] rounded-full text-white hover:font-extrabold transition-all duration-200"
             href="/"
           >
             Home
           </Link>
           <Link
-            className="block px-10 py-4 rounded-lg  transition-all duration-200"
+            className="block px-10 py-4 rounded-lg hover:font-extrabold  transition-all duration-200"
             href="/shop"
           >
             Shop
           </Link>
           <Link
-            className="block px-10 py-4 rounded-lg  transition-all duration-200"
+            className="block px-10 py-4 rounded-lg hover:font-extrabold  transition-all duration-200"
             href="/offer"
           >
             Offer
           </Link>
           <Link
-            className="block px-10 py-4 rounded-lg  transition-all duration-200"
+            className="block px-10 py-4 rounded-lg hover:font-extrabold transition-all duration-200"
             href="/blog"
           >
             Blog

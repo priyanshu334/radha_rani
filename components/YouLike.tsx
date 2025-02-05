@@ -3,37 +3,37 @@ import React, { useState } from "react";
 const dresses = [
   {
     id: 1,
-    image: "/images/dress1.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 2850",
   },
   {
     id: 2,
-    image: "/images/dress2.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 3850",
   },
   {
     id: 3,
-    image: "/images/dress3.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 3050",
   },
   {
     id: 4,
-    image: "/images/dress4.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 2850",
   },
   {
     id: 5,
-    image: "/images/dress5.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 3650",
   },
   {
     id: 6,
-    image: "/images/dress6.jpg",
+    image: "/images/w1.jpeg",
     title: "Full Demand Embroidery Dress",
     price: "₹ 3250",
   },
@@ -69,18 +69,18 @@ const YouMayAlsoLike: React.FC = () => {
             {dresses.map((dress) => (
               <div
                 key={dress.id}
-                className="w-1/4 flex-shrink-0 bg-white shadow rounded-lg overflow-hidden mx-2"
+                className="w-1/4 flex-shrink-0 bg-[#9C7A4D] border-[1px] border-black shadow rounded-lg overflow-hidden mx-2"
               >
                 <img
                   src={dress.image}
                   alt={dress.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-100 object-cover"
                 />
-                <div className="p-4">
-                  <h3 className="text-sm font-medium text-gray-700">
+                <div className="p-4 flex-col items-center justify-center">
+                  <h3 className="text-sm font-medium text-white">
                     {dress.title}
                   </h3>
-                  <p className="text-sm font-semibold text-gray-900 mt-2">
+                  <p className="text-sm font-semibold text-white mt-2">
                     {dress.price}
                   </p>
                 </div>
