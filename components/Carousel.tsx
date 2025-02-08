@@ -1,59 +1,69 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+"use client";
 
-interface Product {
-  id: number;
-  image: string;
-}
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const products: Product[] = [
-  { id: 1, image: '/images/p6.jpeg' },
-  { id: 2, image: '/images/p6.jpeg' },
-  { id: 3, image: '/images/p6.jpeg' },
-  { id: 4, image: '/images/p6.jpeg' },
+const images = [
+  "/image1.jpg",
+  "/image2.jpg",
+  "/image3.jpg",
+  "/image4.jpg",
+  "/image5.jpg",
 ];
 
-const ProductCarousel = () => {
+const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleSlides = 3; // Adjust for different screen sizes
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-center">
-        <Image
-          src={products[currentIndex].image}
-          alt={`Product ${currentIndex + 1}`}
-          width={300}
-          height={400}
-          objectFit="cover"
-          className="rounded-lg"
-        />
+    <div className="relative w-full max-w-4xl mx-auto py-6">
+      {/* Image Wrapper */}
+      <div className="flex overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}
+        >
+          {images.map((src, index) => (
+            <div key={index} className="w-1/3 px-2">
+              <div className="rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  width={300}
+                  height={400}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Navigation Buttons */}
       <button
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
-        onClick={handlePrev}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full z-10"
+        onClick={prevSlide}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-        </svg>
+        <ChevronLeft className="text-white" size={24} />
       </button>
+
       <button
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
-        onClick={handleNext}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-3 rounded-full z-10"
+        onClick={nextSlide}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
-        </svg>
+        <ChevronRight className="text-white" size={24} />
       </button>
     </div>
   );
 };
 
-export default ProductCarousel;
+export default Carousel;

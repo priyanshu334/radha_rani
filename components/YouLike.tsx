@@ -76,7 +76,7 @@ const YouMayAlsoLike: React.FC = () => {
                   alt={dress.title}
                   className="w-full h-100 object-cover"
                 />
-                <div className="p-4 flex-col items-center justify-center">
+                <div className="p-4 flex-col items-center align-middle text-center justify-center">
                   <h3 className="text-sm font-medium text-white">
                     {dress.title}
                   </h3>

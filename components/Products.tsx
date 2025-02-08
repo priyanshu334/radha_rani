@@ -88,7 +88,7 @@ const ProductGrid: React.FC = () => {
           </div>
 
           {/* Product Details */}
-          <div className="bg-[#9C7A4D] border-black border-[1px] p-2">
+          <div className="bg-[#9C7A4D] border-black  p-2">
             <h3 className="text-lg font-medium text-center mb-1">{product.name}</h3>
             <p className="text-center">₹{product.price}</p>
           </div>

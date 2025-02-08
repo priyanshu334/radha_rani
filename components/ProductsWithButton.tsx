@@ -63,9 +63,9 @@ const ProductGridWithButton: React.FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-6 text-white">
       {products.map((product, index) => (
-        <div key={index} className="shadow-md group">
-          {/* Image Wrapper */}
-          <div className="relative min-h-[525px] min-w-[340px] border-black border-[1px] overflow-hidden">
+        <div key={index} className="shadow-md">
+          {/* Image Wrapper with group class */}
+          <div className="relative min-h-[525px] min-w-[340px] border-black border-[1px] overflow-hidden group">
             {/* Default Image */}
             <Image
               src={product.imageSrc}
@@ -88,13 +88,12 @@ const ProductGridWithButton: React.FC = () => {
           <div className="bg-[#9C7A4D] border-black border-[1px] p-2">
             <h3 className="text-lg font-medium text-center mb-1">{product.name}</h3>
             <p className="text-center">₹{product.price}</p>
-
-            {/* Add to Cart Button */}
-
           </div>
+
+          {/* Add to Cart Button (doesn't affect image hover) */}
           <button className="block w-full mt-3 bg-white text-black py-2 px-4 rounded-md hover:bg-[#C8AD84] font-bold hover:text-black transition duration-300">
-              Add to Cart
-            </button>
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

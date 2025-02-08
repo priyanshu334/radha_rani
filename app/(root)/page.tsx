@@ -9,6 +9,9 @@ import ProductGrid from "@/components/Products";
 import CategoryFilter from "@/components/CategoryFilter";
 
 import Image from "next/image";
+import { Circle } from "lucide-react";
+import CircularCarousel from "@/components/CircularCarousel";
+import ImageCarousel from "@/components/CircularCarousel";
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -42,7 +45,7 @@ export default function Home() {
 
       {/* Carousel */}
       <section className="my-8">
-        <Carousel />
+         <Carousel/>
       </section>
      <CategoryFilter/>
      

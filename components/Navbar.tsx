@@ -10,7 +10,7 @@ const Navbar = () => {
   const username = "John Doe"; // Replace with the dynamic username if needed
 
   return (
-    <nav className="bg-[#C8AD84] text-white mb-32">
+    <nav className="bg-[#C8AD84] text-white mb-10">
       <div className="min-w-full flex items-center justify-between py-4 px-8">
         {/* Logo */}
         <div className="flex items-center">
