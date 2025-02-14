@@ -50,13 +50,13 @@ const Navbar = () => {
           </Link>
           <Link
             className="block px-10 py-4 rounded-lg hover:font-extrabold  transition-all duration-200"
-            href="/shop"
+            href="/product"
           >
             Shop
           </Link>
           <Link
             className="block px-10 py-4 rounded-lg hover:font-extrabold  transition-all duration-200"
-            href="/offer"
+            href="/shopingbag"
           >
             Offer
           </Link>
@@ -70,12 +70,15 @@ const Navbar = () => {
 
         {/* Shopping Cart and User Profile */}
         <div className="flex items-center space-x-8">
-          <button className="relative">
+          <Link href="/wishlist"> <button className="relative">
             <FaHeart className="text-3xl text-black" />
-          </button>
+          </button></Link>
+         
+         <Link href="/shopingbag"> 
           <button className="relative">
             <FaShoppingCart className="text-3xl text-black" />
           </button>
+          </Link>
           
           {/* User Icon with Hoverable Dropdown Menu */}
           <div className="relative group">
@@ -103,7 +106,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   className="block px-4 py-2 text-sm hover:bg-[#9C7A4D] hover:text-white"
-                  href="/order"
+                  href="/shopingbag"
                 >
                   My Orders
                 </Link>

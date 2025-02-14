@@ -24,7 +24,7 @@ const ProductDetail: React.FC = () => {
   ];
 
   return (
-    <div className="relative flex flex-col md:flex-row max-w-7xl mx-auto p-4 md:p-8 rounded-lg h-auto md:h-[600px]">
+    <div className="relative flex flex-col md:flex-row max-w-7xl mx-auto my-24  md:p-8 rounded-lg h-auto md:h-[600px]">
       {/* Vertical Thumbnails */}
       <div className="absolute top-4 left-[-80px] hidden md:flex flex-col space-y-2">
         {thumbnails.map((image, index) => (

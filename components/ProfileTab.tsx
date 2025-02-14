@@ -1,4 +1,3 @@
-// components/ProfileTabs.tsx
 'use client';
 
 import React from 'react';
@@ -6,35 +5,35 @@ import Link from 'next/link';
 
 const ProfileTabs = () => {
   return (
-    <div className="bg-[#C8AD84] text-white mx-14 my-10 py-4 px-4 shadow-md">
-      <div className="flex justify-around">
+    <div className="bg-[#C8AD84] text-white mx-4 sm:mx-10 lg:mx-14 md:my-6 mt-24 sm:my-10 sm:mt-20 py-4 px-4 shadow-md rounded-lg">
+      <div className="flex flex-col sm:flex-row flex-wrap justify-center sm:justify-around gap-3 sm:gap-4 text-center">
         <Link
-          href="/profile"
-          className="px-4 py-2 font-extrabold text-black hover:text-white rounded-lg transition"
+          href="/"
+          className="w-full sm:w-auto px-4 py-2 font-extrabold text-black bg-white hover:bg-opacity-90 hover:text-[#C8AD84] rounded-lg transition"
         >
           My Profile
         </Link>
         <Link
-          href="/addresses"
-          className="px-4 py-2 font-extrabold text-black hover:text-white rounded-lg transition"
+          href="/myaddress"
+          className="w-full sm:w-auto px-4 py-2 font-extrabold text-black bg-white hover:bg-opacity-90 hover:text-[#C8AD84] rounded-lg transition"
         >
           My Addresses
         </Link>
         <Link
           href="/payments"
-          className="px-4 py-2 font-extrabold text-black hover:text-white rounded-lg transition"
+          className="w-full sm:w-auto px-4 py-2 font-extrabold text-black bg-white hover:bg-opacity-90 hover:text-[#C8AD84] rounded-lg transition"
         >
           My Payments
         </Link>
         <Link
-          href="/orders"
-          className="px-4 py-2 font-extrabold text-black hover:text-white rounded-lg transition"
+          href="/wishlist"
+          className="w-full sm:w-auto px-4 py-2 font-extrabold text-black bg-white hover:bg-opacity-90 hover:text-[#C8AD84] rounded-lg transition"
         >
           My Orders
         </Link>
         <Link
           href="/logout"
-          className="px-4 py-2 font-extrabold text-black hover:text-white rounded-lg transition"
+          className="w-full sm:w-auto px-4 py-2 font-extrabold text-black bg-white hover:bg-opacity-90 hover:text-[#C8AD84] rounded-lg transition"
         >
           Logout
         </Link>

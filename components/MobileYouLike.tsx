@@ -71,7 +71,7 @@ const YouMayAlsoLike: React.FC = () => {
               <img
                 src={dress.image}
                 alt={dress.title}
-                className="w-full h-50 border-b-[1pxp] border-black object-cover"
+                className="w-full h-40 object-cover"
               />
               <div className="p-2 text-center">
                 <h3 className="text-xs font-medium text-white">{dress.title}</h3>

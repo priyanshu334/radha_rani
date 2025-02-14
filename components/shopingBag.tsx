@@ -12,39 +12,43 @@ const ShoppingBag: React.FC = () => {
   const shipping = 120;
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8  text-black p-8  min-h-screen">
+    <div className="flex flex-col md:flex-row gap-8 text-black p-4 md:p-8 mt-16 min-h-screen">
       {/* Shopping Bag Section */}
-      <div className="flex-1   rounded-lg p-6">
-        <h1 className="text-3xl font-bold mb-6 border-b pb-4">Shopping Bag</h1>
+      <div className="flex-1 rounded-lg p-4 md:p-6">
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 border-b pb-2">Shopping Bag</h1>
         {items.map((item) => (
           <div
             key={item.id}
             className="flex items-center justify-between border-b py-4 last:border-none"
           >
             <div className="flex items-center gap-4">
-              <img src={item.image} alt={item.name} className="w-1/2 h-1/2 rounded-md object-cover" />
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-24 h-28 md:w-40 md:h-52 rounded-md object-cover"
+              />
               <div>
-                <h2 className="text-lg font-medium">{item.name}</h2>
-                <p className="text-sm text-gray-500">Size: {item.size}</p>
-                <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                <h2 className="text-sm md:text-lg font-medium">{item.name}</h2>
+                <p className="text-xs md:text-sm text-gray-500">Size: {item.size}</p>
+                <p className="text-xs md:text-sm text-gray-500">Qty: {item.quantity}</p>
               </div>
             </div>
             <div className="text-right flex flex-col items-end gap-2">
-              <p className="text-lg font-bold">₹ {item.price}</p>
-              <button className="text-sm text-red-500 hover:underline">Remove</button>
-              <button className="text-sm text-blue-500 hover:underline">Edit</button>
-              <button className="text-sm text-green-500 hover:underline">Move to Pay</button>
+              <p className="text-sm md:text-lg font-bold">₹{item.price}</p>
+              <button className="text-xs md:text-sm text-red-500 hover:underline">Remove</button>
+              <button className="text-xs md:text-sm text-blue-500 hover:underline">Edit</button>
+              <button className="text-xs md:text-sm text-green-500 hover:underline">Move to Pay</button>
             </div>
           </div>
         ))}
       </div>
 
       {/* Summary Section */}
-      <hr className="my-8 bg-black" />
-      <div className="w-full lg:w-1/3   p-6 border-l-[1px] border-black">
-        <h2 className="text-2xl font-semibold mb-6 border-b pb-4">Summary</h2>
+      <hr className="md:my-8 bg-black" />
+      <div className="w-full lg:w-1/3 p-4 md:p-6 md:border-l-[1px] md:border-black">
+        <h2 className="text-xl md:text-2xl font-semibold mb-6 border-b pb-4">Summary</h2>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-600">Coupon Code</label>
+          <label className="block text-xs md:text-sm font-medium text-gray-600">Coupon Code</label>
           <input
             type="text"
             className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2 focus:ring-2 focus:ring-blue-500"
@@ -52,16 +56,16 @@ const ShoppingBag: React.FC = () => {
           />
         </div>
         <div className="flex justify-between mb-2 text-gray-600">
-          <p>Items</p>
-          <p>{items.length}</p>
+          <p className="text-xs md:text-sm">Items</p>
+          <p className="text-xs md:text-sm">{items.length}</p>
         </div>
         <div className="flex justify-between mb-2 text-gray-600">
-          <p>Subtotal</p>
-          <p>₹ {subtotal}</p>
+          <p className="text-xs md:text-sm">Subtotal</p>
+          <p className="text-xs md:text-sm">₹ {subtotal}</p>
         </div>
         <div className="flex justify-between mb-4 text-gray-600">
-          <p>Shipping</p>
-          <p>₹ {shipping}</p>
+          <p className="text-xs md:text-sm">Shipping</p>
+          <p className="text-xs md:text-sm">₹ {shipping}</p>
         </div>
         <div className="flex justify-between font-semibold text-lg mb-6">
           <p>Total</p>

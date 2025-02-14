@@ -61,14 +61,11 @@ const products: Product[] = [
 
 const ProductGrid: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 m-6 text-white">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 m-2 md:m-6 text-white">
       {products.map((product, index) => (
-        <div
-          key={index}
-          className="shadow-md group"
-        >
+        <div key={index} className="shadow-md group">
           {/* Image Wrapper */}
-          <div className="relative min-h-[525px] min-w-[340px]  border-black border-[1px] overflow-hidden">
+          <div className="relative h-[220px] w-full md:h-[600px] border-black border-[1.5px] border-b-[0px] overflow-hidden">
             {/* Default Image */}
             <Image
               src={product.imageSrc}
@@ -88,8 +85,8 @@ const ProductGrid: React.FC = () => {
           </div>
 
           {/* Product Details */}
-          <div className="bg-[#9C7A4D] border-black  p-2">
-            <h3 className="text-lg font-medium text-center mb-1">{product.name}</h3>
+          <div className="bg-[#9C7A4D] border-black border-[1.5px] border-t-0 p-2">
+            <h3 className="text-sm md:text-lg font-medium text-center mb-1">{product.name}</h3>
             <p className="text-center">₹{product.price}</p>
           </div>
         </div>

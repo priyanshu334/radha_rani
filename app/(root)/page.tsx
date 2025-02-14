@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "@/components/Carousel";
 import Navbar from "@/components/Navbar";
 import Pagination from "@/components/PaginationComponent";
@@ -12,8 +12,23 @@ import Image from "next/image";
 import { Circle } from "lucide-react";
 import CircularCarousel from "@/components/CircularCarousel";
 import ImageCarousel from "@/components/CircularCarousel";
+import MobileCarousel from "@/components/MobileCarousel";
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
+
+   const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768); // Tailwind's 'md' breakpoint (768px)
+      };
+  
+      handleResize(); // Check on mount
+      window.addEventListener('resize', handleResize);
+      
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -26,7 +41,11 @@ export default function Home() {
     
       {/* Hero Section */}
       <section className="flex flex-col justify-center items-center my-20 space-y-5 text-center text-white px-4">
-        <h1 className="font-extrabold text-[48px]">
+       
+
+       {isMobile?<Image src={"/images/logo.png"} alt="radha rani" width={150} height={150} ></Image>:<div></div>}
+        
+        <h1 className="font-extrabold text-[30px] md:text-[48px]">
           Where style speaks, trend resonates and
           <div className="-mt-2">
         fashion flourishes
@@ -45,7 +64,7 @@ export default function Home() {
 
       {/* Carousel */}
       <section className="my-8">
-         <Carousel/>
+         {isMobile?<MobileCarousel/>:<Carousel />}
       </section>
      <CategoryFilter/>
      

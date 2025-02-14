@@ -1,56 +1,87 @@
 import React, { useState } from "react";
-import { FaTshirt, FaTag } from "react-icons/fa"; // Importing FontAwesome icons
+import { FaTshirt, FaTag } from "react-icons/fa";
 
 const CategoryFilter: React.FC = () => {
   const [category, setCategory] = useState("All Category");
   const [size, setSize] = useState("Select Your Size");
 
+  const [categoryOpen, setCategoryOpen] = useState(false);
+  const [sizeOpen, setSizeOpen] = useState(false);
+
   const categories = ["All Category", "Women", "Men", "Kids"];
   const sizes = ["Select Your Size", "S", "M", "L", "XL"];
 
   return (
-    <div className="flex flex-col items-center space-y-10 py-6">
+    <div className="flex flex-col items-center space-y-6 py-6 px-4">
       {/* Header */}
-      <h1 className="text-4xl font-extrabold text-white text-center md:text-5xl">
+      <h1 className="text-3xl md:text-5xl font-extrabold text-white text-center">
         Explore Our Elegant Designs
       </h1>
 
-      {/* Dropdowns */}
-      <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 md:justify-center">
+      {/* Dropdowns Container */}
+      <div className="w-full max-w-4xl flex flex-col md:flex-row md:items-center gap-4">
         {/* Category Dropdown */}
-        <div className="relative w-full md:w-[700px] ">
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2  text-white">
+        <div className="relative w-full">
+          <div
+            onClick={() => {
+              setCategoryOpen(!categoryOpen);
+              setSizeOpen(false); // Close size dropdown when opening category
+            }}
+            className="flex items-center justify-between px-10 py-3 bg-[#9C7A4D] text-white rounded-md cursor-pointer"
+          >
+            <span>{category}</span>
             <FaTag className="text-lg" />
           </div>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="block w-full px-12 py-2 bg-[#9C7A4D] text-white rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-brown-600"
-          >
-            {categories.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
+          {categoryOpen && (
+            <div className="absolute top-full left-0 w-full bg-[#9C7A4D] rounded-md mt-2 shadow-lg z-10">
+              <ul>
+                {categories.map((item) => (
+                  <li
+                    key={item}
+                    onClick={() => {
+                      setCategory(item);
+                      setCategoryOpen(false);
+                    }}
+                    className="px-10 py-3 text-white hover:bg-[#704C2E] cursor-pointer"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Size Dropdown */}
-        <div className="relative w-full md:w-[400px]">
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white">
+        <div className="relative w-full">
+          <div
+            onClick={() => {
+              setSizeOpen(!sizeOpen);
+              setCategoryOpen(false); // Close category dropdown when opening size
+            }}
+            className="flex items-center justify-between px-10 py-3 bg-[#9C7A4D] text-white rounded-md cursor-pointer"
+          >
+            <span>{size}</span>
             <FaTshirt className="text-lg" />
           </div>
-          <select
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-            className="block w-full px-12 py-2 bg-[#9C7A4D] text-white rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-brown-600"
-          >
-            {sizes.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
+          {sizeOpen && (
+            <div className="absolute top-full left-0 w-full bg-[#9C7A4D] rounded-md mt-2 shadow-lg z-10">
+              <ul>
+                {sizes.map((item) => (
+                  <li
+                    key={item}
+                    onClick={() => {
+                      setSize(item);
+                      setSizeOpen(false);
+                    }}
+                    className="px-10 py-3 text-white hover:bg-[#704C2E] cursor-pointer"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

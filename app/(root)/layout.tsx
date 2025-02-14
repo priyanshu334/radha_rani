@@ -5,6 +5,7 @@ import MobileNavbar from '@/components/MobileNav';
 import OfferSection from '@/components/OfferSection';
 import VectorImage from '@/components/VectorImage';
 import React, { ReactNode, useState, useEffect } from 'react';
+import MobileFooter from '@/components/MobileFooter';
 
 type LayoutProps = {
   children: ReactNode;
@@ -31,10 +32,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <VectorImage />
       <OfferSection />
 
-      <Footer />
-      <div className="bg-[#C8AD84] flex ml-5 justify-between p-[2px] mt-3">
+      {isMobile?<MobileFooter/>:<Footer/>}
+      <div className="bg-[#C8AD84] text-sm md:text-lg  flex ml-2 md:ml-5 justify-between md:p-[2px] mt-3">
         <h1>Copyright © 2024 All rights reserved</h1>
-        <div className="flex mr-5">Privacy Policy</div>
+        <div className="text-sm flex mr-5">Privacy Policy</div>
       </div>
     </div>
   );

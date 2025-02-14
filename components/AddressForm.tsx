@@ -5,7 +5,7 @@ import React from 'react';
 
 const AddressForm = () => {
   return (
-    <div className=" min-h-screen flex  justify-center p-2 -mb-[320px]">
+    <div className=" min-h-screen flex mb-24  justify-center p-2 md:-mb-[320px]">
       <form className=" w-full max-w-10xl    p-8">
         {/* Country */}
         <div className="mb-6">

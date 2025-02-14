@@ -1,5 +1,6 @@
 "use client"
 import Footer from '@/components/Footer';
+import MobileFooter from '@/components/MobileFooter';
 import MobileNavbar from '@/components/MobileNav';
 import Navbar from '@/components/Navbar';
 import OfferSection from '@/components/OfferSection';
@@ -32,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {children}
       <VectorImage2/>
       <OfferSection/>
-      <Footer/>
+      {isMobile?<MobileFooter/>:<Footer/>}
     </div>
   );
 };
